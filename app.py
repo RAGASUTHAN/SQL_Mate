@@ -2,12 +2,13 @@ from flask import Flask, render_template, request, jsonify
 from google import genai
 from google.genai import types
 from config import SYSTEM_INSTRUCTION
+import os
 
 # ============================================================
 # SQL MATE - Configuration
 # Change these variables as needed.
 # ============================================================
-GEMINI_API_KEY = "PASTE_YOUR_GEMINI_API_KEY_HERE"
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 MODEL_NAME = "gemini-3.1-flash-lite"
 HOST = "0.0.0.0"
 PORT = 5000
